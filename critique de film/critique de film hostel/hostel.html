@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel | Regarder les statistiques de tous les films sur Cinéast.com</title>
+    <link rel="stylesheet" href="../critique de film.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="icon" href="../../logo/logo-Ciné.png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../../index.html">
+                <img src="../../logo/logo-Ciné.png" alt="Accueil">
+            </a>
+        </div>
+        <nav class="navigation">
+            <a href="../../page film/seeallfilm.html" class="btn-films" target="_blank">Films</a>
+            <a href="../../page a propos/a propos.html" class="btn-apropos" target="_blank">À propos</a>
+            <a href="../../page demander contenu/demander contenu.html" class="btn-demander" target="_blank">Demander du contenu</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Hostel<br></h1>
+        
+        <section class="movie-details">
+            <div class="image-and-button">
+                <img src="../../affiche film/hostel2005.jpg" alt="Hostel (2005)">
+                <a href="" class="btn" target="_blank">Indisponible</a>
+            </div>
+            <div class="details">
+                <p><strong>Date de sortie</strong> : 6 janvier 2005</p>
+                <p><strong>Genre</strong> : Horreur, Thriller</p>
+                <p><strong>Durée</strong> : 1h 34m</p>
+                <p><strong>Personnage principal</strong> : Paxton</p>
+                <p><strong>Synopsis :</strong> Deux étudiants américains et un Islandais voyagent en Europe à la recherche de fêtes et d'aventures. Ils découvrent un sombre monde de torture lorsqu'ils se retrouvent dans une auberge à Bratislava.</p>
+                <p><strong>Note :</strong> ⭐ 5.9/10 (IMDb)</p>
+                <p><strong>Public recommandé :</strong> Public averti en raison de scènes de violence extrême et de contenu graphique.</p>
+                <p><strong>Récompenses :</strong> Nomination pour le Chainsaw Award.</p>
+                <p><strong>Lieu de tournage :</strong> République tchèque et Slovaquie</p>
+            </div>
+        </section>
+        
+        <div class="tab-container">
+            <div class="tabs">
+                <button class="tab-link active" onclick="openTab(event, 'description')">Description</button>
+                <button class="tab-link" onclick="openTab(event, 'acteurs')">Acteurs</button>
+                <button class="tab-link" onclick="openTab(event, 'realisateurs')">Réalisateurs</button>
+            </div>
+
+            <div id="description" class="tab-content active">
+                <p>⚠️ Si vous ne voulez pas vous spoiler, ne lisez pas le résumé ci-dessous. ⚠️</p>
+                <p>Hostel explore les recoins les plus sombres de l'humanité avec un récit où les vacances de jeunes touristes se transforment en cauchemar. Attirés par des promesses de plaisir, ils tombent dans un piège qui les confronte à des tortures inimaginables.</p>
+            </div>
+
+            <div id="acteurs" class="tab-content">
+                <div class="image-circle-container">
+                    <div class="actor">
+                        <img src="acteur film/Jay Hernandez.jpg" alt="Jay Hernandez" class="image-circle">
+                        <a class="actor-link">Jay Hernandez</a>
+                    </div>
+                    <div class="actor">
+                        <img src="acteur film/Derek Richardson.jpg" alt="Derek Richardson" class="image-circle">
+                        <a class="actor-link">Derek Richardson</a>
+                    </div>
+                    <div class="actor">
+                        <img src="acteur film/Eythor Gudjonsson.jfif" alt="Eythor Gudjonsson" class="image-circle">
+                        <a class="actor-link">Eythor Gudjonsson</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="realisateurs" class="tab-content">
+                <div class="image-circle-container">
+                    <div class="actor">
+                        <img src="acteur film/Eli Roth.jpg" alt="Eli Roth" class="image-circle">
+                        <a class="actor-link">Eli Roth</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="recommended-films">
+            <h2><br>Films Recommandés d'après Hostel (2005)</h2>
+            <div class="film-grid">
+                <a href="../critique de film/saw.html" class="film" target="_blank">
+                    <img src="../../affiche film/saw.jpg" alt="Saw">
+                    <div class="caption">Saw (2004)</div>
+                </a>
+                <a href="../critique de film/texas-chainsaw.html" class="film" target="_blank">
+                    <img src="../../affiche film/texas-chainsaw.jpg" alt="The Texas Chainsaw Massacre">
+                    <div class="caption">The Texas Chainsaw Massacre (2003)</div>
+                </a>
+                <a href="../critique de film/the-hills-have-eyes.html" class="film" target="_blank">
+                    <img src="../../affiche film/the-hills-have-eyes.jpg" alt="The Hills Have Eyes">
+                    <div class="caption">The Hills Have Eyes (2006)</div>
+                </a>
+                <a href="../critique de film/martyrs.html" class="film" target="_blank">
+                    <img src="../../affiche film/martyrs.jpg" alt="Martyrs">
+                    <div class="caption">Martyrs (2008)</div>
+                </a>
+                <a href="../critique de film/turistas.html" class="film" target="_blank">
+                    <img src="../../affiche film/turistas.jpg" alt="Turistas">
+                    <div class="caption">Turistas (2006)</div>
+                </a>
+            </div>
+        </section>
+
+        <script>
+            function openTab(evt, tabName) {
+                let tabContents = document.getElementsByClassName("tab-content");
+                for (let i = 0; i < tabContents.length; i++) {
+                    tabContents[i].style.display = "none";
+                }
+
+                let tabLinks = document.getElementsByClassName("tab-link");
+                for (let i = 0; i < tabLinks.length; i++) {
+                    tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+                }
+
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+
+            document.getElementById("description").style.display = "block";
+        </script>
+    </main>
+    <footer>
+        <p>&copy; 2024 Cinéast.com. Tous droits réservés.</p>
+        <a href="../../page signaler erreur/signal.html" class="btn-signal" target="_blank">Signaler une erreur</a>
+    </footer>
+</body>
+</html>

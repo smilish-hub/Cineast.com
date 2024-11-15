@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annabelle | Regarder les statistiques de tous les films sur Cinéast.com</title>
+    <link rel="stylesheet" href="../critique de film.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="icon" href="../../logo/logo-Ciné.png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../../index.html">
+                <img src="../../logo/logo-Ciné.png" alt="Accueil">
+            </a>
+        </div>
+        <nav class="navigation">
+            <a href="../../page film/seeallfilm.html" class="btn-films" target="_blank">Films</a>
+            <a href="../../page a propos/a propos.html" class="btn-apropos" target="_blank">À propos</a>
+            <a href="../../page demander contenu/demander contenu.html" class="btn-demander" target="_blank">Demander du contenu</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Annabelle (2014)<br></h1>
+        
+        <section class="movie-details">
+            <div class="image-and-button">
+                <img src="../../affiche film/Annabelle2014.jpg" alt="Annabelle (2014)">
+                <a href="https://xalaflix.eu/movies/watch/annabelle/398" class="btn" target="_blank">Regarder le film Annabelle (2014)</a>
+            </div>
+            <div class="details">
+                <p><strong>Date de sortie</strong> : 8 octobre 2014</p>
+                <p><strong>Genre</strong> : Horreur, Mystère, Thriller</p>
+                <p><strong>Durée</strong> : 1h 39m</p>
+                <p><strong>Personnage principal</strong> : Mia Form</p>
+                <p><strong>Synopsis :</strong> Un couple confronté à des événements surnaturels troublants découvre que tout pourrait être lié à une mystérieuse poupée appelée Annabelle.</p>
+                <p><strong>Note :</strong> ⭐ 5.4/10 (IMDb)</p>
+                <p><strong>Public recommandé :</strong> Amateurs de films d'horreur psychologique et de suspense.</p>
+                <p><strong>Récompenses :</strong> Nominé pour le Saturn Award du meilleur film d'horreur.</p>
+                <p><strong>Lieu de tournage :</strong> Californie, États-Unis</p>
+            </div>
+        </section>
+        
+        <div class="tab-container">
+            <div class="tabs">
+                <button class="tab-link active" onclick="openTab(event, 'description')">Description</button>
+                <button class="tab-link" onclick="openTab(event, 'acteurs')">Acteurs</button>
+                <button class="tab-link" onclick="openTab(event, 'realisateurs')">Réalisateurs</button>
+            </div>
+
+            <div id="description" class="tab-content active">
+                <p>⚠️ Si vous ne voulez pas vous spoiler, ne lisez pas le résumé ci-dessous. ⚠️</p>
+                <p>*Annabelle* explore l'origine de la terrifiante poupée introduite dans *Conjuring : Les Dossiers Warren*. Le film suit un jeune couple confronté à des événements surnaturels troublants après avoir reçu la poupée comme cadeau.</p>
+            </div>
+
+            <div id="acteurs" class="tab-content">
+                <div class="image-circle-container">
+                    <div class="actor">
+                        <img src="acteur film/Annabelle Wallis.webp" alt="Annabelle Wallis" class="image-circle">
+                        <a class="actor-link">Annabelle Wallis</a>
+                    </div>
+                    <div class="actor">
+                        <img src="acteur film/Ward Horton.jpg" alt="Ward Horton" class="image-circle">
+                        <a class="actor-link">Ward Horton</a>
+                    </div>
+                    <div class="actor">
+                        <img src="acteur film/Alfre Woodard.jfif" alt="Alfre Woodard" class="image-circle">
+                        <a class="actor-link">Alfre Woodard</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="realisateurs" class="tab-content">
+                <div class="image-circle-container">
+                    <div class="actor">
+                        <img src="acteur film/John R. Leonetti.webp" alt="John R. Leonetti" class="image-circle">
+                        <a class="actor-link">John R. Leonetti</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="recommended-films">
+            <h2><br>Films Recommandés d'après Annabelle (2014)</h2>
+            <div class="film-grid">
+                <a href="../critique de film/conjuring.html" class="film" target="_blank">
+                    <img src="../../affiche film/conjuring.jpg" alt="Conjuring : Les Dossiers Warren">
+                    <div class="caption">Conjuring : Les Dossiers Warren (2013)</div>
+                </a>
+                <a href="../critique de film/annabelle-creation.html" class="film" target="_blank">
+                    <img src="../../affiche film/annabelle-creation.jpg" alt="Annabelle : La Création du Mal">
+                    <div class="caption">Annabelle : La Création du Mal (2017)</div>
+                </a>
+                <a href="../critique de film/la-nonne.html" class="film" target="_blank">
+                    <img src="../../affiche film/la-nonne.jpg" alt="La Nonne">
+                    <div class="caption">La Nonne (2018)</div>
+                </a>
+                <a href="../critique de film/la-llorona.html" class="film" target="_blank">
+                    <img src="../../affiche film/la-llorona.jpg" alt="La Malédiction de la Llorona">
+                    <div class="caption">La Malédiction de la Llorona (2019)</div>
+                </a>
+                <a href="../critique de film/insidious.html" class="film" target="_blank">
+                    <img src="../../affiche film/insidious.jpg" alt="Insidious : Chapitre 1">
+                    <div class="caption">Insidious : Chapitre 1 (2010)</div>
+                </a>
+            </div>
+        </section>
+
+        <script>
+            function openTab(evt, tabName) {
+                let tabContents = document.getElementsByClassName("tab-content");
+                for (let i = 0; i < tabContents.length; i++) {
+                    tabContents[i].style.display = "none";
+                }
+
+                let tabLinks = document.getElementsByClassName("tab-link");
+                for (let i = 0; i < tabLinks.length; i++) {
+                    tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+                }
+
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+
+            document.getElementById("description").style.display = "block";
+        </script>
+    </main>
+    <footer>
+        <p>&copy; 2024 Cinéast.com. Tous droits réservés.</p>
+        <a href="../../page signaler erreur/signal.html" class="btn-signal" target="_blank">Signaler une erreur</a>
+    </footer>
+</body>
+</html>

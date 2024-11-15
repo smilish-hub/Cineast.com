@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Rituel | Regarder les statistiques de tous les films sur Cinéast.com</title>
+    <link rel="stylesheet" href="../critique de film.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="icon" href="../../logo/logo-Ciné.png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../../index.html">
+                <img src="../../logo/logo-Ciné.png" alt="Accueil">
+            </a>
+        </div>
+        <nav class="navigation">
+            <a href="../../page film/seeallfilm.html" class="btn-films" target="_blank">Films</a>
+            <a href="../../page a propos/a propos.html" class="btn-apropos" target="_blank">À propos</a>
+            <a href="../../page demander contenu/demander contenu.html" class="btn-demander" target="_blank">Demander du contenu</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Le Rituel (2017)<br></h1>
+        
+        <section class="movie-details">
+            <div class="image-and-button">
+                <img src="../../affiche film/le rituel2017.webp" alt="Le Rituel (2017)">
+                <a href="" class="btn" target="_blank">Indisponible</a>
+            </div>
+            <div class="details">
+                <p><strong>Date de sortie</strong> : 11 octobre 2017</p>
+                <p><strong>Genre</strong> : Horreur, Mystère</p>
+                <p><strong>Durée</strong> : 1h 34m</p>
+                <p><strong>Personnage principal</strong> : Luke</p>
+                <p><strong>Synopsis :</strong> Quatre amis d'université entreprennent une randonnée en mémoire de leur ami décédé, mais ils se retrouvent pris au piège dans une forêt remplie d'une présence maléfique ancienne.</p>
+                <p><strong>Note :</strong> ⭐ 6.3/10 (IMDb)</p>
+                <p><strong>Public recommandé :</strong> Fans de films d'horreur psychologique et de mythologie nordique.</p>
+                <p><strong>Récompenses :</strong> British Independent Film Award du meilleur son.</p>
+                <p><strong>Lieu de tournage :</strong> Roumanie</p>
+            </div>
+        </section>
+        
+        <div class="tab-container">
+            <div class="tabs">
+                <button class="tab-link active" onclick="openTab(event, 'description')">Description</button>
+                <button class="tab-link" onclick="openTab(event, 'acteurs')">Acteurs</button>
+                <button class="tab-link" onclick="openTab(event, 'realisateurs')">Réalisateurs</button>
+            </div>
+
+            <div id="description" class="tab-content active">
+                <p>⚠️ Si vous ne voulez pas vous spoiler, ne lisez pas le résumé ci-dessous. ⚠️</p>
+                <p>*Le Rituel* explore le voyage émotionnel de quatre amis alors qu'ils affrontent leur propre culpabilité et une entité surnaturelle terrifiante dans une forêt nordique isolée.</p>
+            </div>
+
+            <div id="acteurs" class="tab-content">
+                <div class="image-circle-container">
+                    <div class="actor">
+                        <img src="acteur film/Rafe Spall.jpg" alt="Rafe Spall" class="image-circle">
+                        <a class="actor-link">Rafe Spall</a>
+                    </div>
+                    <div class="actor">
+                        <img src="acteur film/Rob James-Collier.jfif" alt="Rob James-Collier" class="image-circle">
+                        <a class="actor-link">Rob James-Collier</a>
+                    </div>
+                    <div class="actor">
+                        <img src="acteur film/Arsher Ali.jfif" alt="Arsher Ali" class="image-circle">
+                        <a class="actor-link">Arsher Ali</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="realisateurs" class="tab-content">
+                <div class="image-circle-container">
+                    <div class="actor">
+                        <img src="acteur film/David Bruckner.jpg" alt="David Bruckner" class="image-circle">
+                        <a class="actor-link">David Bruckner</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="recommended-films">
+            <h2><br>Films Recommandés d'après Le Rituel (2017)</h2>
+            <div class="film-grid">
+                <a href="../critique de film/heredite.html" class="film" target="_blank">
+                    <img src="../../affiche film/heredite.jpg" alt="Hérédité">
+                    <div class="caption">Hérédité (2018)</div>
+                </a>
+                <a href="../critique de film/midsommar.html" class="film" target="_blank">
+                    <img src="../../affiche film/midsommar.jpg" alt="Midsommar">
+                    <div class="caption">Midsommar (2019)</div>
+                </a>
+                <a href="../critique de film/the-witch.html" class="film" target="_blank">
+                    <img src="../../affiche film/the-witch.jpg" alt="The Witch">
+                    <div class="caption">The Witch (2015)</div>
+                </a>
+                <a href="../critique de film/the-descent.html" class="film" target="_blank">
+                    <img src="../../affiche film/the-descent.jpg" alt="The Descent">
+                    <div class="caption">The Descent (2005)</div>
+                </a>
+                <a href="../critique de film/the-babadook.html" class="film" target="_blank">
+                    <img src="../../affiche film/the-babadook.jpg" alt="The Babadook">
+                    <div class="caption">The Babadook (2014)</div>
+                </a>
+            </div>
+        </section>
+
+        <script>
+            function openTab(evt, tabName) {
+                let tabContents = document.getElementsByClassName("tab-content");
+                for (let i = 0; i < tabContents.length; i++) {
+                    tabContents[i].style.display = "none";
+                }
+
+                let tabLinks = document.getElementsByClassName("tab-link");
+                for (let i = 0; i < tabLinks.length; i++) {
+                    tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+                }
+
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+
+            document.getElementById("description").style.display = "block";
+        </script>
+    </main>
+    <footer>
+        <p>&copy; 2024 Cinéast.com. Tous droits réservés.</p>
+        <a href="../../page signaler erreur/signal.html" class="btn-signal" target="_blank">Signaler une erreur</a>
+    </footer>
+</body>
+</html>
