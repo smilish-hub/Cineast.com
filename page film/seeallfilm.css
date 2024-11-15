@@ -1,0 +1,284 @@
+/* RESET DES STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+}
+
+/* HEADER */
+header {
+    background-color: #6a4c9c; /* Violet */
+    padding: 10px 15px;
+    height: 70px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header .logo img {
+    height: 60px;
+    width: auto;
+}
+
+header .logo img:hover {
+    transform: scale(1.05);
+}
+
+/* CONTENEUR DE FILTRAGE ET RECHERCHE */
+.filter-container, .search-container {
+    padding: 20px;
+    text-align: left;
+}
+
+/* Animation de sursaut pour chaque genre de film */
+.filter-container label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #6a4c9c;
+    margin-right: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Pour un retour doux */
+}
+
+.filter-container label:hover {
+    animation: shake 0.3s ease; /* Applique l'animation au survol */
+}
+
+/* Animation de sursaut */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+
+#category {
+    padding: 8px;
+    font-size: 1rem;
+    border: 2px solid #6a4c9c;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#category:focus {
+    border-color: #281d3b;
+}
+
+/* Style de la barre de recherche */
+.search-container input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    border: 2px solid #6a4c9c;
+    border-radius: 8px;
+    margin-top: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-container input:focus {
+    border-color: #281d3b;
+    box-shadow: 0 0 5px rgba(106, 76, 156, 0.5);
+}
+
+/* MESSAGE D'AUCUN FILM TROUVÉ */
+.no-result-message {
+    color: #ff0000;
+    font-size: 1rem;
+    margin-top: 20px;
+    animation: shake 0.5s ease; /* Lance l'animation "shake" */
+}
+
+/* GRID DES FILMS */
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.movie-card {
+    position: relative;
+    width: 150px;
+    height: 225px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+}
+
+.movie-card img {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-card h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card:hover img {
+    transform: scale(1.1);
+}
+
+.movie-card:hover h3 {
+    opacity: 1;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    background-color: #6a4c9c;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+/* Style de la navigation */
+.navigation a {
+    margin: 0 15px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #281d3b;
+}
+
+/* Boutons spécifiques (Films, Connexion) */
+.btn-films, .btn-apropos, .btn-demander, .btn-login {
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.btn-films:hover, .btn-apropos:hover, .btn-demander:hover, .btn-login:hover {
+    background-color: #281d3b;
+}
+
+/* Style de la section droite avec la barre de recherche et le bouton de connexion */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+/* Style pour le bouton désactivé */
+.btn-films.disabled {
+    background-color: #d3d3d3;
+    color: #999;
+    cursor: default;
+    pointer-events: none;
+}
+
+.btn-films.disabled:hover {
+    background-color: #d3d3d3;
+}
+
+/* Style du texte pour le nombre de films */
+.film-count {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Style pour le conteneur du bouton (caché au début) */
+.no-films-button {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style du bouton */
+.no-films-button button {
+    background-color: #6a4c9c;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Effet au survol du bouton */
+.no-films-button button:hover {
+    background-color: #291e3a;
+}
+
+.no-films-button button:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.6);
+}
+
+.btn-signal {
+    color: #fff;
+    background-color: #393242;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: auto; /* Assure que le bouton est à droite */
+    transition: background-color 0.3s;
+}
+
+.btn-signal:hover {
+    background-color: #3a2a53;
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    background-color: #6a4c9c;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #fff;
+}

@@ -1,0 +1,223 @@
+/* RESET DES STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+}
+
+/* HEADER */
+header {
+    background-color: #6a4c9c; /* Violet */
+    padding: 10px 15px; /* Réduit le padding vertical */
+    height: 70px; /* Définit une hauteur spécifique */
+    text-align: center;
+    display: flex;
+    justify-content: flex-start; /* Aligne tous les éléments à gauche */
+    align-items: center; /* Centre le logo et le bouton verticalement */
+}
+
+header .logo img {
+    height: 60px; /* Ajuste la hauteur pour l'aligner avec le texte du bouton */
+    width: auto; /* Maintient le ratio de l'image */
+}
+
+header .logo img:hover {
+    transform: scale(1.05);
+}
+
+/* SECTION À PROPOS */
+#apropos {
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+#apropos h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#apropos p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* SECTION FILMS POPULAIRES */
+#popular {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+#popular h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.movies-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.movie-card {
+    position: relative;
+    width: 150px;
+    height: 225px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-card h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card:hover h3 {
+    opacity: 1;
+}
+
+/* LIEN "VOIR TOUT" */
+.see-all-link a {
+    display: block;
+    text-align: right;
+    font-size: 1rem;
+    color: #6a4c9c;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+}
+
+.see-all-link a:hover {
+    color: #4e378b;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    background-color: #6a4c9c;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.navigation a {
+    margin: 0 15px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #281d3b;
+}
+
+/* Boutons spécifiques (Films, Connexion) */
+.btn-films, .btn-apropos, .btn-demander, .btn-login {
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #ff00ff;
+    transition: background-color 0.3s;
+}
+
+.btn-films:hover, .btn-apropos:hover, .btn-demander:hover, .btn-login:hover {
+    background-color: #281d3b;
+}
+
+/* Style de la section droite avec la barre de recherche et le bouton de connexion */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Style du champ de recherche */
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.search-form input[type="text"] {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-form button {
+    padding: 8px;
+    background-color: #6a4c9c;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #281d3b;
+}
+
+/* Style pour le bouton désactivé */
+.btn-apropos.disabled {
+    background-color: #d3d3d3; /* Couleur de fond grisée */
+    color: #999; /* Couleur du texte grisée */
+    cursor: default; /* Change le curseur pour montrer qu'il n'est pas cliquable */
+    pointer-events: none; /* Désactive tous les événements de clic */
+}
+
+.btn-apropos.disabled:hover {
+    background-color: #d3d3d3; /* Pas d’effet au survol */
+}
+
+.btn-signal {
+    color: #fff;
+    background-color: #393242;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: auto; /* Assure que le bouton est à droite */
+    transition: background-color 0.3s;
+}
+
+.btn-signal:hover {
+    background-color: #3a2a53;
+    transform: scale(1.05);
+}
+
+

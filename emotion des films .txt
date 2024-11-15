@@ -1,0 +1,29 @@
+Horreur :
+ - Peur
+ - Choqué
+ - Frustration 
+ - Dégout 
+Action :
+ - Suspense
+ - Excitation
+ - Triomphe
+ - Inquiétude
+
+Comédie :
+ - Amusement
+ - Joie
+ - Empathie
+ - Surprise
+
+Thriller
+ - Suspense
+ - Peur
+ - Frustration
+ - Surprise
+
+Science Fiction :
+ - Fascination
+ - Suspense
+ - Inquiétude
+ - Émerveillement
+

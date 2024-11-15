@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tous les Films | Regarder les statistiques de tous les films sur Cinéast.com</title>
+    <link rel="stylesheet" href="seeallfilm.css">
+    <link rel="icon" href="../logo/logo-Ciné.png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../logo/logo-Ciné.png" alt="Accueil">
+            </a>
+        </div>
+        <nav class="navigation">
+            <a href="../page film/seeallfilm.html" class="btn-films">Films </a>
+            <a href="../page a propos/a propos.html" class="btn-apropos">À propos</a>
+            <a href="../page demander contenu/demander contenu.html" class="btn-demander">Demander du contenu</a>
+           
+        </nav>
+        <script>
+            window.onload = function() {
+                // Récupérer l'URL actuelle (en utilisant le pathname de l'URL)
+                var currentPage = window.location.pathname.split("/").pop();
+        
+                // Sélectionner tous les liens du menu de navigation
+                var navLinks = document.querySelectorAll('.navigation a');
+        
+                // Parcourir les liens et ajouter la classe 'disabled' au lien actif
+                navLinks.forEach(function(link) {
+                    // Vérifier si le href du lien correspond à la page actuelle
+                    if (link.href.includes(currentPage)) {
+                        link.classList.add('disabled');
+                        link.style.pointerEvents = 'none'; // Désactiver le clic
+                        link.style.color = 'gray'; // Optionnel : changer la couleur pour indiquer l'inactivité
+                        link.style.cursor = 'not-allowed'; // Optionnel : changer le curseur
+                    }
+                });
+            }
+        </script>
+    </header>
+        
+    <main>
+        <div class="filter-container">
+            <label for="category">Filtrer par catégorie :</label>
+            <select id="category" onchange="filterFilms()">
+                <option value="all">Tous les films</option>
+                <option value="horreur">Films d'Horreur</option>
+                <option value="thriller">Films Thriller</option>
+                <option value="action">Films Action</option>
+                <option value="comédie">Films comédique</option>
+                <option value="science">Films Science-fiction</option>
+                <option value="drole" >Films Fou rire obligé</option>
+                <option value="drame" >Films Drame</option>
+                <option value="guerre" > Films de guerre</option>
+            </select>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Rechercher par nom..." oninput="searchFilms()">
+        </div>
+
+        <div id="no-result-message" class="no-result-message" style="display: none;">
+            Désolé, nous n'avons pas ce film dans notre répertoire.
+        </div>
+
+        <div id="film-count" class="film-count" style="display: none;">
+            Nombre de films : 0
+        </div>
+
+        <!-- Nouveau bouton -->
+        <div id="no-films-button" class="no-films-button" style="display: none;">
+            <a href="../page demander contenu/demander contenu.html">
+                <button>Aucun film.... Demander du contenu</button>
+            </a>
+        </div>
+
+        <section id="film-list" class="movie-grid">
+            <div class="movie-card horreur">
+                <a href="../critique de film/critique de film terrifier/terrifier.html" target="_blank">
+                    <img src="../affiche film/terrifier1.jpg" alt="Film d'Horreur 1">
+                </a>
+                <h3>Terrifier</h3>
+            </div>
+            <div class="movie-card horreur">
+                <a href="../critique de film/critique de film terrifier2/terrifier2.html" target="_blank">
+                    <img src="../affiche film/terrifier2.webp" alt="Film d'Horreur 1">
+                </a>
+                <h3>Terrifier 2</h3>
+            </div>
+            <div class="movie-card horreur">
+                <a href="../critique de film/critique de film terrifier3/terrifier3.html" target="_blank">
+                    <img src="../affiche film/terrifier3.jpg" alt="Film d'Horreur 1">
+                </a>
+                <h3>Terrifier 3</h3>
+            </div>
+            <div class="movie-card horreur thriller">
+                <a href="../critique de film/critique de film sinister/sinister.html" target="_blank">
+                    <img src="../affiche film/Sinister2012.jpeg" alt="Film d'Horreur 1">
+                </a>
+                <h3>Sinister </h3>
+            </div>
+            <div class="movie-card horreur thriller">
+                <a href="../critique de film/critique de film sinister2/sinister2.html" target="_blank">
+                    <img src="../affiche film/sinister2.jpg" alt="Film d'Horreur 1">
+                </a>
+                <h3>Sinister 2</h3>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cinéast.com. Tous droits réservés.</p>
+        <a href="../page signaler erreur/signal.html" class="btn-signal" target="_blank">Signaler une erreur</a>
+    </footer>
+
+    <script>
+        // Fonction pour filtrer les films par catégorie
+        function filterFilms() {
+            const selectedCategory = document.getElementById("category").value.toLowerCase();
+            const filmCards = document.querySelectorAll(".movie-card");
+
+            let filmFound = false;
+
+            filmCards.forEach(card => {
+                if (selectedCategory === "all" || card.classList.contains(selectedCategory)) {
+                    card.style.display = "block";
+                    filmFound = true;  // Au moins un film trouvé
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            updateFilmCount(filmFound);
+        }
+
+        // Fonction pour rechercher des films par nom
+        function searchFilms() {
+            const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+            const filmCards = document.querySelectorAll(".movie-card");
+            let found = false;
+
+            filmCards.forEach(card => {
+                const title = card.querySelector("h3").textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    card.style.display = "block";
+                    found = true;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            document.getElementById("no-result-message").style.display = found ? "none" : "block";
+            updateFilmCount(found);
+        }
+
+        // Fonction pour mettre à jour le nombre de films visibles
+        function updateFilmCount(found) {
+            const visibleFilms = document.querySelectorAll(".movie-card:not([style*='display: none'])");
+            const filmCountElement = document.getElementById("film-count");
+            const noResultMessage = document.getElementById("no-result-message");
+            const noFilmsButton = document.getElementById("no-films-button");
+
+            // Si aucun film n'est trouvé
+            if (noResultMessage.style.display === "block" || visibleFilms.length === 0) {
+                noFilmsButton.style.display = "block";  // Afficher le bouton
+                filmCountElement.style.display = "none";  // Ne pas afficher le nombre de films
+            } else {
+                noFilmsButton.style.display = "none";  // Cacher le bouton
+                filmCountElement.style.display = "block";
+                filmCountElement.textContent = "Nombre de films : " + visibleFilms.length;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            updateFilmCount(false);  // Initialiser le nombre de films
+        });
+    </script>
+</body>
+</html>
+
+
+
+

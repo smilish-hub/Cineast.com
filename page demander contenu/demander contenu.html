@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demander du Contenu | Regarder les statistiques de tous les films sur Cinéast.com</title>
+    <link rel="stylesheet" href="demander contenu.css">
+    <link rel="icon" href="../logo/logo-Ciné.png">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../logo/logo-Ciné.png" alt="Accueil">
+            </a>
+        </div>
+        <nav class="navigation">
+            <a href="../page film/seeallfilm.html" class="btn-films">Films </a>
+            <a href="../page a propos/a propos.html" class="btn-apropos">À propos</a>
+            <a href="../page demander contenu/demander contenu.html" class="btn-demander">Demander du contenu</a>
+        </nav>
+        <script>
+            window.onload = function() {
+                var currentPage = window.location.pathname.split("/").pop();
+                var navLinks = document.querySelectorAll('.navigation a');
+                navLinks.forEach(function(link) {
+                    if (link.href.includes(currentPage)) {
+                        link.classList.add('disabled');
+                        link.style.pointerEvents = 'none';
+                        link.style.color = 'gray';
+                        link.style.cursor = 'not-allowed';
+                    }
+                });
+            }
+        </script>
+    </header>
+
+    <!-- SECTION DEMANDER UN CONTENU -->
+    <section id="demander-contenu">
+        <div class="container">
+            <h1>Demander un Film</h1>
+            <p><strong>📩 Demander un Film</strong></p>
+
+<p>Vous ne trouvez pas le film que vous cherchez sur notre site ? Pas de souci ! Nous vous offrons la possibilité de <strong>demander l'ajout d'un film</strong> que vous souhaitez voir. 🎬</p>
+
+<p>Il vous suffit de remplir le formulaire ci-dessous avec les détails du film (titre, année, genre, etc.) et nous nous efforcerons de l'ajouter à notre collection dès que possible. Nous sommes constamment à la recherche de nouveaux films à proposer à notre communauté, et vos suggestions sont toujours les bienvenues ! 🎥</p>
+
+<p><strong>⚠️ Important :</strong> Bien que nous ajoutions de nouveaux films régulièrement, sachez que nous ne pouvons pas garantir une date précise pour l’ajout. Tous les films demandés ne peuvent pas être intégrés immédiatement, mais nous faisons de notre mieux pour satisfaire vos demandes. ⏳</p>
+
+<p>Merci de faire partie de notre communauté et d'aider à rendre notre collection encore plus riche et diverse ! 📽️</p>
+
+
+            <!-- Google Form intégré -->
+            <iframe src="https://forms.gle/vscLJpHXLZkZ71gT6" 
+                width="640" 
+                height="750" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0">Chargement…</iframe>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Cinéast.com. Tous droits réservés.</p>
+        <a href="../page signaler erreur/signal.html" class="btn-signal" target="_blank">Signaler une erreur</a>
+    </footer>
+
+</body>
+</html>
+

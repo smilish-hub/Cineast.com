@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page À Propos | Regarder les statistiques de tous les films sur Cinéast.com</title>
+    <link rel="stylesheet" href="a propos.css">
+    <link rel="icon" href="../logo/logo-Ciné.png">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../logo/logo-Ciné.png" alt="Accueil">
+            </a>
+        </div>
+        <nav class="navigation">
+            <a href="../page film/seeallfilm.html" class="btn-films">Films </a>
+            <a href="../page a propos/a propos.html" class="btn-apropos">À propos</a>
+            <a href="../page demander contenu/demander contenu.html" class="btn-demander">Demander du contenu</a>
+        </nav>
+        <script>
+            window.onload = function() {
+                // Récupérer l'URL actuelle (en utilisant le pathname de l'URL)
+                var currentPage = window.location.pathname.split("/").pop();
+        
+                // Sélectionner tous les liens du menu de navigation
+                var navLinks = document.querySelectorAll('.navigation a');
+        
+                // Parcourir les liens et ajouter la classe 'disabled' au lien actif
+                navLinks.forEach(function(link) {
+                    // Vérifier si le href du lien correspond à la page actuelle
+                    if (link.href.includes(currentPage)) {
+                        link.classList.add('disabled');
+                        link.style.pointerEvents = 'none'; // Désactiver le clic
+                        link.style.color = 'gray'; // Optionnel : changer la couleur pour indiquer l'inactivité
+                        link.style.cursor = 'not-allowed'; // Optionnel : changer le curseur
+                    }
+                });
+            }
+        </script>
+    </header>
+
+    <!-- SECTION À PROPOS -->
+    <section id="apropos">
+        <div class="container">
+            <h1>À propos de Cinéast</h1>
+            <p><strong>🎬 À propos de Cinéast.com</strong></p>
+
+            <p>Cinéast.com est votre source incontournable pour découvrir les critiques et avis sur une large sélection de films. Nous proposons des critiques détaillées, des informations complètes, et des recommandations sur les films que vous adorez. 🍿</p>
+            
+            <p><strong>⚠️ Veuillez noter que tous les films ne sont pas présents sur notre site.</strong> Si vous souhaitez voir un film qui n'est pas encore listé, vous pouvez <a href="../page demander contenu/demander contenu.html">demander son ajout ici</a>. Nous nous efforçons de répondre à vos demandes et d'ajouter de nouveaux titres régulièrement. 🎥</p>
+            
+            <p>Nous tenons également à préciser que <strong>🎞️ tous les films ne peuvent pas être visionnés directement sur notre site.</strong> Nous affichons des liens vers des sites externes qui diffusent les films. <strong>Cinéast.com ne gère pas ces sites et n’est pas responsable de leur contenu ou de leur disponibilité.</strong> Assurez-vous de vérifier la disponibilité du film sur la plateforme externe avant de tenter de le visionner. 🔗</p>
+            
+            <p>Merci de votre compréhension et profitez bien de votre expérience cinématographique sur Cinéast.com ! 🎉</p>
+            
+            <a href="../page demander contenu/demander contenu.html" class="btn-demander" target="_blank">Demander un film</a>
+        </div>
+    </section>
+
+    <!-- SECTION FILMS POPULAIRES -->
+    <section id="popular">
+        <h2>Films Populaires</h2>
+        <div class="movies-grid">
+            <div class="movie-card">
+                <a href="../critique de film/critique de film the substance/thesubstance.html" target="_blank">
+                    <img src="../affiche film/dc5e71f5a015d5d24f0135ee600ac27b.webp" alt="Film 1">
+                    <h3>The substance</h3>
+                </a>
+            </div>
+            <div class="movie-card">
+                <a href="../critique de film/critique de film gladiator 2/gladiator2.html" target="_blank">
+                    <img src="../affiche film/gladiator2.jfif" alt="Film 2">
+                    <h3>Gladiator II</h3>
+                </a>
+            </div>
+            <div class="movie-card">
+                <a href="../critique de film/critique de film trois amies/troisamies.html" target="_blank">
+                    <img src="../affiche film/trois amies.webp" alt="Film 2">
+                    <h3>Trois amies</h3>
+                </a>
+            </div>
+            
+        </div>
+        <div class="see-all-link">
+            <a href="../page film/seeallfilm.html" target="_blank">Voir tout</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Cinéast.com. Tous droits réservés.</p>
+        <a href="../page signaler erreur/signal.html" class="btn-signal" target="_blank">Signaler une erreur</a>
+    </footer>
+
+</body>
+</html>
+

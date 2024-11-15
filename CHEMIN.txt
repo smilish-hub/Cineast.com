@@ -1,0 +1,14 @@
+echo "# Cineast.com" >> README.md 
+git init 
+git add README.md 
+git commit -m "premier commit" 
+git branch -M main 
+git remote add origine https://github.com/smilish-hub/Cineast.com.git
+ git push -u origine main
+
+
+mettre à jour le site 
+
+git add .
+git commit -m "nom des changements"
+git push origin main
