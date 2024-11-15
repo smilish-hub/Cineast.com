@@ -1,7 +1,5 @@
-dans se html y'a les informztions du film the substance change les par les infos du film saw 1 sorties en 2004 ( prend les informations du net )
+dans se html y'a les informztions du film terrifier 3 change les par les infos du film the conjuring 1 verifie bien les informations sur le net et ducoup tu recreer la page html
 
 conjuring 1
 conjuring 2
 conjuring 3
-sinister 1
-sinister 2
